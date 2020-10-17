@@ -4,14 +4,11 @@ const port = process.env.PORT || 3000;
 const server = http.createServer((req, res) => {
     res.statusCode = 200;
     var result = [];
-    var lastCommitSha;
-    require('child_process').exec('git rev-parse HEAD', function (err, stdout) {
-        lastCommitSha = stdout;
-        console.log('Last commit hash on this branch is:', stdout);
-    });
+    var versionNum = require('./package.json').version;
+    var lastCommitSha = require('child_process').execSync('git rev-parse HEAD').toString().trim();
     var data = {
         myapplication: [{
-            version: "1.0",
+            version: versionNum,
             lastcommitsha: lastCommitSha,
             description: "pre-interview technical test"
         }]
