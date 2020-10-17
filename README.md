@@ -1,14 +1,14 @@
 # anz-take-home-test
-##Getting started
+## Getting started
 I used Node js to implement the required api in test 1 as suggested even though it's not my strongest language.
 
 run 'npm start' to start the application.
 
-###Risk found for the api
+### Risk found for the api
  1. no authentication.
  2. sha needs to be retrieved from Git, which is dependent on the connection to Git.
 
-###Versioning approach
+### Versioning approach
 Version number of this project consist of 3 digits divided by 2 dots.
 The first one is the major number and should be incremented for each incompatible release.
 The second number is the minor number and is for each compatible release.
